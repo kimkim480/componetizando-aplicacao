@@ -4,6 +4,8 @@ import { MovieCard } from './MovieCard';
 
 import { api } from '../services/api';
 
+import '../styles/content.scss';
+import { Header } from "./Header";
 interface GenreResponseProps {
   id: number;
   name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
@@ -40,10 +42,9 @@ export function Content({selectedGenreId}: ContentProps) {
 
   return (
     <div className="container">
-    <header>
-      <span className="category">Categoria:<span> {selectedGenre.title}</span></span>
-    </header>
 
+      <Header title={selectedGenre.title}/>
+    
     <main>
       <div className="movies-list">
         {movies.map(movie => (
